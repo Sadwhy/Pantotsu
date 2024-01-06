@@ -101,6 +101,8 @@ class   SettingsDialogFragment() : BottomSheetDialogFragment() {
             dismiss()
         }
 
+        binding.settingsDownloads.isChecked =
+            context?.getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)?.getBoolean("offlineMode", false) ?: false
         binding.settingsDownloads.setOnCheckedChangeListener { _, isChecked ->
 
             if (!isChecked) {
@@ -141,6 +143,8 @@ class   SettingsDialogFragment() : BottomSheetDialogFragment() {
                 }
             }
             dismiss()
+            context?.getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)?.edit()
+                ?.putBoolean("offlineMode", isChecked)?.apply()
             }
         }
 
