@@ -646,5 +646,6 @@
     <string name="app_widget_description">This is an app widget description</string>
     <string name="airing_image">Airing Image</string>
     <string name="anime_downloads">animeDownloads</string>
+    <string name="report">Disable Reports</string>
 
 </resources>

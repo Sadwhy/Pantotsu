@@ -619,6 +619,14 @@ class SettingsActivity : AppCompatActivity(),  SimpleDialog.OnDialogResultListen
                 snackString(getString(R.string.long_click_to_check_update))
             }
         }
+        
+        binding.settingReport.setOnCheckedChangeListener { _, isChecked -> 
+        if (isChecked) { 
+        disabledReports = true 
+        } else { 
+        disabledReports = false 
+        }
+    }
 
         binding.settingsLogo.setOnLongClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
