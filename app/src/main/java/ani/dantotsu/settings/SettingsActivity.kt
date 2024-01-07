@@ -27,7 +27,6 @@ import ani.dantotsu.databinding.ActivitySettingsBinding
 import ani.dantotsu.others.AppUpdater
 import ani.dantotsu.others.CustomBottomDialog
 import ani.dantotsu.others.LangSet
-import ani.dantotsu.settings.SettingsActivity
 import ani.dantotsu.parsers.AnimeSources
 import ani.dantotsu.parsers.MangaSources
 import ani.dantotsu.subcriptions.Notifications

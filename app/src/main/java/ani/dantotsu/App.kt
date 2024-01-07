@@ -11,6 +11,7 @@ import ani.dantotsu.aniyomi.anime.custom.PreferenceModule
 import ani.dantotsu.parsers.AnimeSources
 import ani.dantotsu.parsers.MangaSources
 import ani.dantotsu.parsers.NovelSources
+import ani.dantotsu.settings.SettingsActivity
 import ani.dantotsu.parsers.novel.NovelExtensionManager
 import com.google.android.material.color.DynamicColors
 import com.google.firebase.crashlytics.ktx.crashlytics
