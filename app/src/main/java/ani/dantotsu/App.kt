@@ -57,7 +57,7 @@ class App : MultiDexApplication() {
         }
         registerActivityLifecycleCallbacks(mFTActivityLifecycleCallbacks)
 
-        Firebase.crashlytics.setCrashlyticsCollectionEnabled(!SettingsActivity.DisabledReports)
+        Firebase.crashlytics.setCrashlyticsCollectionEnabled(!DisabledReports)
 
         Injekt.importModule(AppModule(this))
         Injekt.importModule(PreferenceModule(this))
