@@ -623,9 +623,9 @@ class SettingsActivity : AppCompatActivity(),  SimpleDialog.OnDialogResultListen
         
         binding.settingReport.setOnCheckedChangeListener { _, isChecked -> 
         if (isChecked) { 
-       var disabledReports = true 
+       var DisabledReports = true 
         } else { 
-       var disabledReports = false 
+       var DisabledReports = false 
         }
     }
 
