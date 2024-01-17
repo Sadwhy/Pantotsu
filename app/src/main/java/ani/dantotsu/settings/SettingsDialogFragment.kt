@@ -74,16 +74,50 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
             }
         }
 
-        binding.settingsIncognito.isChecked =
-            context?.getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)?.getBoolean(
-                "incognito",
-                false
-            ) ?: false
-
-        binding.settingsIncognito.setOnCheckedChangeListener { _, isChecked ->
+        if (requireContext().getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)
+                .getBoolean("incognito", false)) {
+            binding.incognitoView1.visibility = View.GONE
+            binding.incognitoView2.visibility = View.VISIBLE
+        }
+        else {
+            binding.incognitoView1.visibility = View.VISIBLE
+            binding.incognitoView2.visibility = View.GONE
+        }
+        binding.incognito1.setOnClickListener {
             context?.getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)?.edit()
-                ?.putBoolean("incognito", isChecked)?.apply()
+                ?.putBoolean("incognito", true)?.apply()
             incognitoNotification(requireContext())
+            binding.incognitoView1.animate()
+                .alpha(0f)
+                .setDuration(300)
+                .withEndAction {
+                    binding.incognitoView1.visibility = View.GONE
+                    binding.incognitoView2.alpha = 0f
+                    binding.incognitoView2.visibility = View.VISIBLE
+                    binding.incognitoView2.animate()
+                        .alpha(1f)
+                        .setDuration(300)
+                        .start()
+                }
+                .start()
+        }
+        binding.incognito2.setOnClickListener {
+            context?.getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)?.edit()
+                ?.putBoolean("incognito", false)?.apply()
+            incognitoNotification(requireContext())
+            binding.incognitoView2.animate()
+                .alpha(0f)
+                .setDuration(300)
+                .withEndAction {
+                    binding.incognitoView2.visibility = View.GONE
+                    binding.incognitoView1.alpha = 0f
+                    binding.incognitoView1.visibility = View.VISIBLE
+                    binding.incognitoView1.animate()
+                        .alpha(1f)
+                        .setDuration(300)
+                        .start()
+                }
+                .start()
         }
         binding.settingsExtensionSettings.setSafeOnClickListener {
             startActivity(Intent(activity, ExtensionsActivity::class.java))
@@ -102,63 +136,80 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
             dismiss()
         }
 
-        binding.settingsDownloads.isChecked =
-            context?.getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)
-                ?.getBoolean("offlineMode", false) ?: false
-        binding.settingsDownloads.setOnCheckedChangeListener { _, isChecked ->
-            when (pageType) {
-                PageType.MANGA -> {
-                    val intent = Intent(activity, NoInternet::class.java)
-                    intent.putExtra(
-                        "FRAGMENT_CLASS_NAME",
-                        OfflineMangaFragment::class.java.name
-                    )
-                    startActivity(intent)
-                }
-
-                PageType.ANIME -> {
-                    val intent = Intent(activity, NoInternet::class.java)
-                    intent.putExtra(
-                        "FRAGMENT_CLASS_NAME",
-                        OfflineAnimeFragment::class.java.name
-                    )
-                    startActivity(intent)
-                }
-
-                PageType.HOME -> {
-                    val intent = Intent(activity, NoInternet::class.java)
-                    intent.putExtra("FRAGMENT_CLASS_NAME", OfflineFragment::class.java.name)
-                    startActivity(intent)
-                }
-
-                PageType.OfflineMANGA -> {
-                    val intent = Intent(activity, MainActivity::class.java)
-                    intent.putExtra("FRAGMENT_CLASS_NAME", MangaFragment::class.java.name)
-                    startActivity(intent)
-                }
-
-                PageType.OfflineHOME -> {
-                    val intent = Intent(activity, MainActivity::class.java)
-                    intent.putExtra(
-                        "FRAGMENT_CLASS_NAME",
-                        if (Anilist.token != null) HomeFragment::class.java.name else LoginFragment::class.java.name
-                    )
-                    startActivity(intent)
-                }
-
-                PageType.OfflineANIME -> {
-                    val intent = Intent(activity, MainActivity::class.java)
-                    intent.putExtra("FRAGMENT_CLASS_NAME", AnimeFragment::class.java.name)
-                    startActivity(intent)
-                }
-            }
-
-            dismiss()
+        if (requireContext().getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)
+                .getBoolean("offlineMode", false)) {
+            binding.downloadview1.visibility = View.GONE
+            binding.downloadview2.visibility = View.VISIBLE
+        }
+        else {
+            binding.downloadview1.visibility = View.VISIBLE
+            binding.downloadview2.visibility = View.GONE
+        }
+        binding.download1.setOnClickListener {
             context?.getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)?.edit()
-                ?.putBoolean("offlineMode", isChecked)?.apply()
+                ?.putBoolean("offlineMode", true)?.apply()
+                    binding.downloadview1.visibility = View.GONE
+                    binding.downloadview2.visibility = View.VISIBLE
+            offline()
+        }
+        binding.download2.setOnClickListener {
+            context?.getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)?.edit()
+                ?.putBoolean("offlineMode", false)?.apply()
+                    binding.downloadview2.visibility = View.GONE
+                    binding.downloadview1.visibility = View.VISIBLE
+            offline()
         }
     }
+    fun offline() {
+        when (pageType) {
+            PageType.MANGA -> {
+                val intent = Intent(activity, NoInternet::class.java)
+                intent.putExtra(
+                    "FRAGMENT_CLASS_NAME",
+                    OfflineMangaFragment::class.java.name
+                )
+                startActivity(intent)
+            }
 
+            PageType.ANIME -> {
+                val intent = Intent(activity, NoInternet::class.java)
+                intent.putExtra(
+                    "FRAGMENT_CLASS_NAME",
+                    OfflineAnimeFragment::class.java.name
+                )
+                startActivity(intent)
+            }
+
+            PageType.HOME -> {
+                val intent = Intent(activity, NoInternet::class.java)
+                intent.putExtra("FRAGMENT_CLASS_NAME", OfflineFragment::class.java.name)
+                startActivity(intent)
+            }
+
+            PageType.OfflineMANGA -> {
+                val intent = Intent(activity, MainActivity::class.java)
+                intent.putExtra("FRAGMENT_CLASS_NAME", MangaFragment::class.java.name)
+                startActivity(intent)
+            }
+
+            PageType.OfflineHOME -> {
+                val intent = Intent(activity, MainActivity::class.java)
+                intent.putExtra(
+                    "FRAGMENT_CLASS_NAME",
+                    if (Anilist.token != null) HomeFragment::class.java.name else LoginFragment::class.java.name
+                )
+                startActivity(intent)
+            }
+
+            PageType.OfflineANIME -> {
+                val intent = Intent(activity, MainActivity::class.java)
+                intent.putExtra("FRAGMENT_CLASS_NAME", AnimeFragment::class.java.name)
+                startActivity(intent)
+            }
+        }
+
+        dismiss()
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
