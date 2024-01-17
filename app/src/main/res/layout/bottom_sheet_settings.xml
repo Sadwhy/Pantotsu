@@ -117,6 +117,64 @@
             app:thumbTint="@color/button_switch_track"
             android:checked="false"/>
 
+       	<LinearLayout
+          		android:layout_width="match_parent"
+          		android:layout_height="match_parent"
+          		android:orientation="horizontal"
+          		android:gravity="center">
+
+     		<RelativeLayout
+            android:layout_width="160dp"
+            android:layout_height="200dp">
+     		 
+      		<soup.neumorphism.NeumorphImageButton
+      		    android:id="@+id/myButton1"
+         			android:layout_width="160dp"
+         			android:layout_height="140dp"
+         			android:src="@drawable/ic_incognito_24"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            style="@style/neumorph_button"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"/>
+    
+        <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/myButton1"
+           android:layout_centerHorizontal="true"
+           android:text="@string/incognito_mode"
+           android:fontFamily="@font/poppins_bold"
+           android:translationY="-40dp"/>
+        </RelativeLayout>
+     
+     		<RelativeLayout
+            android:layout_width="160dp"
+            android:layout_height="200dp">
+
+       <soup.neumorphism.NeumorphImageButton
+           android:id="@+id/myButton"
+           android:layout_width="160dp"
+           android:layout_height="140dp"
+           android:layout_centerHorizontal="true"
+           android:src="@drawable/ic_round_download_24"
+           android:layout_marginTop="10dp"
+           android:clickable="true"
+           android:scaleType="centerInside"
+           style="@style/neumorph_button"/>
+
+        <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/myButton"
+           android:layout_centerHorizontal="true"
+           android:text="@string/downloads"
+           android:fontFamily="@font/poppins_bold"
+           android:translationY="-40dp"/>
+        </RelativeLayout>
+       
+       	</LinearLayout>
+
         <Button
             android:id="@+id/image_search"
             style="@style/Widget.Material3.Button.TextButton"

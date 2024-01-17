@@ -23,11 +23,12 @@ android {
         versionCode ((System.currentTimeMillis() / 60000).toInteger())
         versionName "2.0.0-beta00-iv3"
         signingConfig signingConfigs.debug
+        multiDexEnabled true
     }
 
     buildTypes {
         debug {
-            applicationIdSuffix ".beta"
+            applicationIdSuffix ".sad"
             manifestPlaceholders = [icon_placeholder: "@mipmap/ic_launcher_beta", icon_placeholder_round: "@mipmap/ic_launcher_beta_round"]
             debuggable System.getenv("CI") == null
         }
@@ -101,6 +102,7 @@ dependencies {
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
     implementation 'com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0'
     implementation 'com.alexvasilkov:gesture-views:2.8.3'
+    implementation 'com.github.fornewid:neumorphism:0.3.2'
     implementation 'com.github.VipulOG:ebook-reader:0.1.6'
     implementation 'androidx.paging:paging-runtime-ktx:3.2.1'
     implementation 'com.github.eltos:simpledialogfragments:v3.7'

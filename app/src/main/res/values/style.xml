@@ -71,6 +71,11 @@
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
     </style>
+    
+    <style name="neumorph_button">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">32dp</item>
+    </style>
 
     <style name="BottomNavBar" parent="">
         <!-- set background color  to transparent -->
