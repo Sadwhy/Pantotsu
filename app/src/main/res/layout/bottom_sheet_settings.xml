@@ -171,9 +171,9 @@
                     android:layout_width="170dp"
                     android:layout_height="140dp"
                     android:src="@drawable/ic_round_download_24"
-                    android:tint="@color/colorOnPrimaryContainer"
+                    android:tint="?attr/colorOnPrimaryContainer"
                     android:scaleType="centerInside"
-                    app:neumorph_backgroundColor="@color/colorPrimaryContainer"
+                    app:neumorph_backgroundColor="?attr/colorPrimaryContainer"
                     style="@style/neumorph_button" />
 
                 <TextView
@@ -181,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/offline_mode"
-                    android:textColor="@color/colorOnPrimaryContainer"
+                    android:textColor="?attr/colorOnPrimaryContainer"
                     android:fontFamily="@font/poppins_bold"
                     android:layout_marginTop="-44dp"/>
             </LinearLayout>
