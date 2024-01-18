@@ -93,7 +93,6 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="centerInside"
-                    app:neumorph_shadowElevation="3dp"
                     style="@style/neumorph_button"/>
 
                 <TextView
@@ -118,11 +117,10 @@
                     android:layout_width="170dp"
                     android:layout_height="140dp"
                     android:src="@drawable/ic_incognito_24"
-                    android:tint="?attr/colorOnSurface"
+                    android:tint="?attr/colorOnPrimaryContainer"
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="centerInside"
-                    app:neumorph_shadowElevation="3dp"
                     style="@style/neumorph_button"
                     app:neumorph_shapeType="pressed"/>
              <TextView

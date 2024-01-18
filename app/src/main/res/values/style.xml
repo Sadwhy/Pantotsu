@@ -74,9 +74,8 @@
    
     <style name="neumorph_button">
         <item name="neumorph_cornerFamily">rounded</item>
-        <item name="neumorph_cornerSize">32dp</item>
         <item name="neumorph_shadowColorLight">?attr/colorSurface</item>
-        <item name="neumorph_shadowColorDark">?attr/colorOnSurface</item>
+        <item name="neumorph_shadowColorDark">?attr/colorSurfaceVariant</item>
     </style>
 
     <style name="BottomNavBar" parent="">
