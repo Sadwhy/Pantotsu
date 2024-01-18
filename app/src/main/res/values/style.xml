@@ -76,6 +76,7 @@
         <item name="neumorph_cornerFamily">rounded</item>
         <item name="neumorph_shadowColorLight">?attr/colorSurface</item>
         <item name="neumorph_shadowColorDark">?attr/colorSurfaceVariant</item>
+        <item name="neumorph_shadowElevation">6dp</item>
     </style>
 
     <style name="BottomNavBar" parent="">
