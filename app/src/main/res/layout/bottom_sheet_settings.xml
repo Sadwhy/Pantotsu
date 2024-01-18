@@ -118,7 +118,7 @@
                     android:layout_width="170dp"
                     android:layout_height="140dp"
                     android:src="@drawable/ic_incognito_24"
-                    android:tint="?attr/colorInverseOnSurface"
+                    android:tint="?attr/colorOnSurface"
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="centerInside"
@@ -130,7 +130,7 @@
                  android:layout_height="wrap_content"
                  android:layout_gravity="center"
                  android:text="@string/incognito_mode"
-                 android:textColor="?attr/colorInverseOnSurface"
+                 android:textColor="?attr/colorOnSurface"
                  android:fontFamily="@font/poppins_bold"
                  android:layout_marginTop="-44dp"/>
 
