@@ -112,8 +112,8 @@
                 android:orientation="vertical"
                 android:id="@+id/incognitoView2"
                 android:visibility="gone">
-
-                <soup.neumorphism.NeumorphImageButton
+              
+           <soup.neumorphism.NeumorphImageButton
                     android:id="@+id/incognito2"
                     android:layout_width="170dp"
                     android:layout_height="140dp"
@@ -125,15 +125,14 @@
                     app:neumorph_shadowElevation="3dp"
                     style="@style/neumorph_button"
                     app:neumorph_shapeType="pressed"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/incognito_mode"
-                    android:textColor="?attr/colorInverseOnSurface"
-                    android:fontFamily="@font/poppins_bold"
-                    android:layout_marginTop="-44dp"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center"
+                 android:text="@string/incognito_mode"
+                 android:textColor="?attr/colorInverseOnSurface"
+                 android:fontFamily="@font/poppins_bold"
+                 android:layout_marginTop="-44dp"/>
 
             </LinearLayout>
             <LinearLayout
