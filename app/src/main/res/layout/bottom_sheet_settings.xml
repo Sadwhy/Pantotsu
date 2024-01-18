@@ -122,13 +122,14 @@
                     android:focusable="true"
                     android:scaleType="centerInside"
                     style="@style/neumorph_button"
-                    app:neumorph_shapeType="pressed"/>
+                    app:neumorph_shapeType="pressed"
+                    app:neumorph_backgroundColor="?attr/colorPrimaryContainer"/>
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:layout_gravity="center"
                  android:text="@string/incognito_mode"
-                 android:textColor="?attr/colorOnSurface"
+                 android:textColor="?attr/colorOnPrimaryContainer"
                  android:fontFamily="@font/poppins_bold"
                  android:layout_marginTop="-44dp"/>
 
@@ -146,8 +147,7 @@
                    android:src="@drawable/ic_round_download_24"
                    android:tint="?attr/colorPrimary"
                    android:scaleType="centerInside"
-                   app:neumorph_shadowElevation="3dp"
-                   style="@style/Widget.Neumorph.ImageButton" />
+                   style="@style/neumorph_button" />
 
                <TextView
                    android:layout_width="wrap_content"
@@ -171,18 +171,17 @@
                     android:layout_width="170dp"
                     android:layout_height="140dp"
                     android:src="@drawable/ic_round_download_24"
-                    android:tint="@color/light_blue_600"
+                    android:tint="@color/colorOnPrimaryContainer"
                     android:scaleType="centerInside"
-                    app:neumorph_shadowElevation="3dp"
-                    app:neumorph_backgroundColor="@color/light_blue_200"
-                    style="@style/Widget.Neumorph.ImageButton" />
+                    app:neumorph_backgroundColor="@color/colorPrimaryContainer"
+                    style="@style/neumorph_button" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/offline_mode"
-                    android:textColor="@color/light_blue_600"
+                    android:textColor="@color/colorOnPrimaryContainer"
                     android:fontFamily="@font/poppins_bold"
                     android:layout_marginTop="-44dp"/>
             </LinearLayout>
