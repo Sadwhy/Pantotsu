@@ -80,7 +80,8 @@
     </style>
 
     <style name="elevated_butt">
-      <item name="app:pitColor">?attr/colorSurface</item>
+      <item name="pitColor">?attr/colorSurface</item>
+      <item name="neuCornerRadius">20dp</item>
     </style>
 
     <style name="BottomNavBar" parent="">
