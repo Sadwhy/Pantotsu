@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".media.user.ListActivity"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    tools:context=".media.user.ListActivity">
 
     <ProgressBar
         android:id="@+id/listProgressBar"
@@ -73,16 +71,11 @@
             android:layout_height="48dp"
             app:tabContentStart="32dp"
             app:tabMode="scrollable"
+            app:tapGravity="fill"
             app:tabPaddingEnd="16dp"
             app:tabPaddingStart="16dp"
             app:tabTextAppearance="@style/NavBarText"
             tools:ignore="SpeakableTextPresentCheck"/>
-    
-         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPager1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager2.widget.ViewPager2
