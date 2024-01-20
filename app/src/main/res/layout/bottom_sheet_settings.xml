@@ -116,14 +116,14 @@
               
            <club.cred.synth.views.PitView
                     android:id="@+id/incognito2"
-                    android:layout_width="170dp"
-                    android:layout_height="140dp"
-                    android:src="@drawable/ic_incognito_24"
+                    android:layout_width="160dp"
+                    android:layout_height="130dp"
+                    app:srcCompat="@drawable/ic_incognito_24"
                     android:tint="?attr/colorOnPrimaryContainer"
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="centerInside"
-                    app:pitColor="?attr/colorSurface"/>
+                    style="@style/elevated_butt"/>
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
