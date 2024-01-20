@@ -75,7 +75,7 @@
     <style name="neumorph_button">
         <item name="neumorph_cornerFamily">rounded</item>
         <item name="neumorph_shadowColorLight">?attr/android:colorBackground</item>
-        <item name="neumorph_shadowColorDark">?attr/colorSurfaceInverse</item>
+        <item name="neumorph_shadowColorDark">?attr/colorOnSurfaceInverse</item>
         <item name="neumorph_shadowElevation">5dp</item>
     </style>
 
