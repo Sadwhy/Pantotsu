@@ -76,7 +76,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:clipChildren="false">
 
      		<LinearLayout
                 android:layout_width="170dp"
@@ -110,9 +111,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:id="@+id/incognitoView2"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:clipChildren="false">
               
-           <soup.neumorphism.NeumorphImageButton
+           <club.cred.synth.views.PitView
                     android:id="@+id/incognito2"
                     android:layout_width="170dp"
                     android:layout_height="140dp"
@@ -121,8 +123,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="centerInside"
-                    style="@style/neumorph_button"
-                    app:neumorph_shapeType="pressed"/>
+                    app:pitColor="?attr/colorSurface"/>
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
