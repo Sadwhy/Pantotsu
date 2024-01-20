@@ -71,7 +71,7 @@
             android:layout_height="48dp"
             app:tabContentStart="32dp"
             app:tabMode="scrollable"
-            app:tapGravity="fill"
+            app:tabGravity="fill"
             app:tabPaddingEnd="16dp"
             app:tabPaddingStart="16dp"
             app:tabTextAppearance="@style/NavBarText"
