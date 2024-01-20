@@ -75,8 +75,8 @@
     <style name="neumorph_button">
         <item name="neumorph_cornerFamily">rounded</item>
         <item name="neumorph_shadowColorLight">?attr/android:colorBackground</item>
-        <item name="neumorph_shadowColorDark">?attr/colorSurfaceVariant</item>
-        <item name="neumorph_shadowElevation">3dp</item>
+        <item name="neumorph_shadowColorDark">?attr/colorSurfaceInverse</item>
+        <item name="neumorph_shadowElevation">5dp</item>
     </style>
 
     <style name="BottomNavBar" parent="">
