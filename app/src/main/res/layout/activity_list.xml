@@ -17,7 +17,7 @@
         android:id="@+id/listAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorSurface"
+        android:background="?attr/colorPrimaryContainer"
         android:theme="@style/Theme.Dantotsu.AppBarOverlay">
         <LinearLayout
             android:id="@+id/settingsContainer"
