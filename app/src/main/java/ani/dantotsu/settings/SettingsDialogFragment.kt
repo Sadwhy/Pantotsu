@@ -150,14 +150,18 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
                 ?.putBoolean("offlineMode", true)?.apply()
                     binding.downloadview1.visibility = View.GONE
                     binding.downloadview2.visibility = View.VISIBLE
-            offline()
+            Handler().postDelayed({
+                offline()
+                }, 1000)
         }
         binding.download2.setOnClickListener {
             context?.getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)?.edit()
                 ?.putBoolean("offlineMode", false)?.apply()
                     binding.downloadview2.visibility = View.GONE
                     binding.downloadview1.visibility = View.VISIBLE
-            offline()
+            Handler().postDelayed({
+                offline()
+                }, 1000)
         }
     }
     fun offline() {
