@@ -38,8 +38,6 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         pageType = arguments?.getSerializable("pageType") as? PageType ?: PageType.HOME
-        val neumbuttons = findViewById<LinearLayout>(R.id.neumviews)
-        neumbuttons.invalidate()
     }
 
     override fun onCreateView(
