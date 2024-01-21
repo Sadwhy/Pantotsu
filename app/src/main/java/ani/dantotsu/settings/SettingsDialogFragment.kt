@@ -54,9 +54,8 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
         val window = dialog?.window
         window?.statusBarColor = Color.CYAN
         val typedValue = TypedValue()
-        val neumviews = view.findViewById<LinearLayout>(R.id.neumviews)
-        neumviews.invalidate();
-        neumviews.requestLayout();
+        invalidate()
+        requestLayout()
         val theme = requireContext().theme
         theme.resolveAttribute(com.google.android.material.R.attr.colorSurface, typedValue, true)
         window?.navigationBarColor = typedValue.data
