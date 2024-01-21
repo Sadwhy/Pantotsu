@@ -847,8 +847,11 @@ class SettingsActivity : AppCompatActivity(), SimpleDialog.OnDialogResultListene
                     )!!.component
                 )
             setAction("Do it!") {
+                neumviews.invalidate()
+                neumviews.requestLayout()
                 context.startActivity(mainIntent)
                 Runtime.getRuntime().exit(0)
+                
             }
             show()
         }
