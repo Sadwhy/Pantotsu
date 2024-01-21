@@ -73,12 +73,13 @@
         </LinearLayout>
 
        	<LinearLayout
+       	    android:id="@+id/neumviews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
             android:clipChildren="false"
-            android:id="@+id/neumviews">
+            >
 
      		<LinearLayout
                 android:layout_width="170dp"
