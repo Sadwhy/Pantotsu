@@ -1,6 +1,8 @@
 package ani.dantotsu.settings
 
 import android.content.Context
+import java.util.*
+import kotlin.concurrent.schedule
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -150,18 +152,18 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
                 ?.putBoolean("offlineMode", true)?.apply()
                     binding.downloadview1.visibility = View.GONE
                     binding.downloadview2.visibility = View.VISIBLE
-            Handler().postDelayed({
-                offline()
-                }, 1000)
+            Timer().schedule(1000){
+            offline()
+              }
         }
         binding.download2.setOnClickListener {
             context?.getSharedPreferences("Dantotsu", Context.MODE_PRIVATE)?.edit()
                 ?.putBoolean("offlineMode", false)?.apply()
                     binding.downloadview2.visibility = View.GONE
                     binding.downloadview1.visibility = View.VISIBLE
-            Handler().postDelayed({
-                offline()
-                }, 1000)
+            Timer().schedule(1000){
+            offline()
+              }
         }
     }
     fun offline() {
