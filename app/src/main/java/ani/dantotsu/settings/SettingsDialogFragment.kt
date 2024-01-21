@@ -38,6 +38,8 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         pageType = arguments?.getSerializable("pageType") as? PageType ?: PageType.HOME
+        val neumbuttons = findViewById<LinearLayout>(R.id.neumviews)
+        neumbuttons.invalidate()
     }
 
     override fun onCreateView(
@@ -54,8 +56,6 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
         val window = dialog?.window
         window?.statusBarColor = Color.CYAN
         val typedValue = TypedValue()
-        invalidate()
-        requestLayout()
         val theme = requireContext().theme
         theme.resolveAttribute(com.google.android.material.R.attr.colorSurface, typedValue, true)
         window?.navigationBarColor = typedValue.data
