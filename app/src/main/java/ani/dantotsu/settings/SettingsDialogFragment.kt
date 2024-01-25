@@ -46,6 +46,7 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = BottomSheetSettingsBinding.inflate(inflater, container, false)
+        neumviews.invalidateMenu()
         return binding.root
     }
 
