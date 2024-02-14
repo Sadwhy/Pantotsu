@@ -10,10 +10,6 @@ def gitCommitHash = providers.exec {
     commandLine("git", "rev-parse", "--verify", "--short", "HEAD")
 }.standardOutput.asText.get().trim()
 
-def apikeyPropertiesFile = rootProject.file("apikey.properties")
-def apikeyProperties = new Properties()
-apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
-
 android {
     compileSdk 34
 
@@ -25,8 +21,6 @@ android {
         versionName "2.2.0"
         versionCode 220000000
         signingConfig signingConfigs.debug
-        buildConfigField("String", "APP_SECRET", apikeyProperties['APP_SECRET'])
-        buildConfigField("String", "USER_ID_ENCRYPT_KEY", apikeyProperties['USER_ID_ENCRYPT_KEY'])
     }
 
     flavorDimensions "store"
@@ -47,14 +41,14 @@ android {
 
     buildTypes {
         alpha {
-            applicationIdSuffix ".beta" // keep as beta by popular request
+            applicationIdSuffix ".bet" // keep as beta by popular request
             versionNameSuffix "-alpha01"
             manifestPlaceholders = [icon_placeholder: "@mipmap/ic_launcher_alpha", icon_placeholder_round: "@mipmap/ic_launcher_alpha_round"]
             debuggable System.getenv("CI") == null
             isDefault true
         }
         debug {
-            applicationIdSuffix ".beta"
+            applicationIdSuffix ".bet"
             versionNameSuffix "-beta02"
             manifestPlaceholders = [icon_placeholder: "@mipmap/ic_launcher_beta", icon_placeholder_round: "@mipmap/ic_launcher_beta_round"]
             debuggable false
