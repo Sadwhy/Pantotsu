@@ -19,7 +19,7 @@ Dantotsu is an [Anilist](https://anilist.co/) only client.
 ### 🚀 STAR THIS REPOSITORY TO SUPPORT THE DEVELOPER AND ENCOURAGE THE DEVELOPMENT OF THE APPLICATION!
 
 ## WANT TO CONTRIBUTE? 🤝
-
+ 
 All contributions are welcome, from code to documentation to graphics to design suggestions to bug reports. Please use GitHub to its fullest; contribute Pull Requests, contribute tutorials or other content - whatever you have to offer, we can use!
 
 You can come hang out with our awesome community, request new features, and report any bugs or issues at our Discord server too. 📣
