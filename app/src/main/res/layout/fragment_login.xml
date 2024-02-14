@@ -103,7 +103,7 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             		android:text="@string/import_settings1"
-            		android:textSize="20sp"
+            		android:textSize="9sp"
             		android:textColor="?attr/colorOutline"
             		android:fontFamily="@font/poppins_bold"/>
 
