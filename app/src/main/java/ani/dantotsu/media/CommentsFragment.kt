@@ -1,34 +1,54 @@
 package ani.dantotsu.media
 
-import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.updateLayoutParams
-import ani.dantotsu.connections.anilist.Anilist
-import ani.dantotsu.databinding.FragmentCommentsBinding
-import ani.dantotsu.loadImage
-import ani.dantotsu.navBarHeight
-import ani.dantotsu.snackString
-import ani.dantotsu.statusBarHeight
-import ani.dantotsu.themes.ThemeManager
+import android.widget.TextView
+import androidx.fragment.app.FragmentManager
+import androidx.recyclerview.widget.RecyclerView
+import ani.dantotsu.databinding.ItemQuestionBinding
+import ani.dantotsu.others.CustomBottomDialog
+import ani.dantotsu.setAnimation
+import io.noties.markwon.Markwon
+import io.noties.markwon.SoftBreakAddsNewLinePlugin
 
-class CommentsFragment : AppCompatActivity(){
-    lateinit var binding: FragmentCommentsBinding
-    //Comments
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        ThemeManager(this).applyTheme()
-        binding = FragmentCommentsBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+class FAQAdapter(
+    private val questions: List<Triple<Int, String, String>>,
+    private val manager: FragmentManager
+) :
+    RecyclerView.Adapter<FAQAdapter.FAQViewHolder>() {
 
-        binding.commentsLayout.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-            topMargin = statusBarHeight
-            bottomMargin = navBarHeight
-        }
-        binding.commentUserAvatar.loadImage(Anilist.avatar)
-        binding.commentTitle.text = "Work in progress"
-        binding.commentSend.setOnClickListener {
-            //TODO
+    inner class FAQViewHolder(val binding: ItemQuestionBinding) :
+        RecyclerView.ViewHolder(binding.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FAQViewHolder {
+        return FAQViewHolder(
+            ItemQuestionBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
+    }
+
+    override fun onBindViewHolder(holder: FAQViewHolder, position: Int) {
+        val b = holder.binding.root
+        setAnimation(b.context, b)
+        val faq = questions[position]
+        b.text = faq.second
+        b.setCompoundDrawablesWithIntrinsicBounds(faq.first, 0, 0, 0)
+        b.setOnClickListener {
+            CustomBottomDialog.newInstance().apply {
+                setTitleText(faq.second)
+                addView(
+                    TextView(b.context).apply {
+                        val markWon = Markwon.builder(b.context)
+                            .usePlugin(SoftBreakAddsNewLinePlugin.create()).build()
+                        markWon.setMarkdown(this, faq.third)
+                    }
+                )
+            }.show(manager, "dialog")
         }
     }
+
+    override fun getItemCount(): Int = questions.size
 }

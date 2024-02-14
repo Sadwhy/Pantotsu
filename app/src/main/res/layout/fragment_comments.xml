@@ -11,70 +11,35 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/commentTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center"
-            android:text="@string/comments"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="16sp" />
+    <TextView
+        android:id="@+id/devsTitle3"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:paddingStart="32dp"
+        android:paddingEnd="64dp"
+        android:text="@string/faq"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_round_arrow_back_ios_new_24"
+        app:drawableTint="?attr/colorOnBackground" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/commentsList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="58dp"
-            tools:listitem="@layout/item_comments" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
+    <ani.dantotsu.FadingEdgeRecyclerView
+        android:id="@+id/1devsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="8dp"
+        android:clipToPadding="false"
+        android:paddingStart="8dp"
         android:paddingTop="8dp"
-        android:layout_gravity="bottom|end"
-        android:background="@color/nav_bg">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/commentUserAvatar"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:scaleType="center"
-            android:layout_marginStart="12dp"
-            app:srcCompat="@drawable/ic_round_add_circle_24"
-            tools:ignore="ContentDescription,ImageContrastCheck" />
-
-        <EditText
-            android:id="@+id/commentInput"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="12sp"
-            android:fontFamily="@font/poppins_semi_bold"
-            android:hint="Add a comment..."
-            android:inputType="text"
-            android:padding="8dp"
-            android:background="@drawable/card_outline"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            tools:ignore="HardcodedText"
-            android:autofillHints="The One Piece is real" />
-
-        <ImageButton
-            android:id="@+id/commentSend"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:layout_marginEnd="12dp"
-            android:background="@drawable/ic_round_send_24"
-            tools:ignore="ContentDescription" />
+        android:paddingEnd="8dp"
+        android:paddingBottom="64dp"
+        android:requiresFadingEdge="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_question"
+        tools:orientation="vertical" />
 
     </LinearLayout>
 </FrameLayout>
