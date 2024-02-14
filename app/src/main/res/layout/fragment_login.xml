@@ -94,7 +94,7 @@
               	android:layout_width="match_parent"
               	android:layout_height="wrap_content"
               	android:orientation="horizontal"
-              	android:padding="12dp"
+              	android:padding="8dp"
               	android:gravity="center">
 
       	<TextView
@@ -103,7 +103,7 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             		android:text="@string/import_settings1"
-            		android:textSize="9sp"
+            		android:textSize="20sp"
             		android:textColor="?attr/colorOutline"
             		android:fontFamily="@font/poppins_bold"/>
 
