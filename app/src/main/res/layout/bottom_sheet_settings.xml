@@ -96,7 +96,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="centerInside"
-                    style="@style/neumorph_button"/>
+                    style="@style/neumorph_dark"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -125,7 +125,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="centerInside"
-                    style="@style/neumorph_button"
+                    style="@style/neumorph_dark"
                     app:neumorph_shapeType="pressed"/>
              <TextView
                  android:layout_width="wrap_content"
@@ -150,7 +150,7 @@
                    android:src="@drawable/ic_round_download_24"
                    android:tint="?attr/colorPrimary"
                    android:scaleType="centerInside"
-                   style="@style/neumorph_button" />
+                   style="@style/neumorph_dark" />
 
                <TextView
                    android:layout_width="wrap_content"
@@ -176,7 +176,7 @@
                     android:src="@drawable/ic_round_download_24"
                     android:tint="?attr/colorOnPrimaryContainer"
                     android:scaleType="centerInside"
-                    style="@style/neumorph_button"
+                    style="@style/neumorph_dark"
                     app:neumorph_shapeType="basin"/>
 
                 <TextView
