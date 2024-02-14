@@ -722,9 +722,9 @@ class SettingsActivity : AppCompatActivity(), SimpleDialog.OnDialogResultListene
         } else {
             binding.settingsCheckUpdate.visibility = View.GONE
             binding.settingsShareUsername.visibility = View.GONE
-            binding.settingsCheckUpdate.isEnabled = false
+            binding.settingsCheckUpdate.isEnabled = true
             binding.settingsShareUsername.isEnabled = false
-            binding.settingsCheckUpdate.isChecked = false
+            binding.settingsCheckUpdate.isChecked = true
             binding.settingsShareUsername.isChecked = false
         }
 
