@@ -57,7 +57,6 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
         val theme = requireContext().theme
         theme.resolveAttribute(com.google.android.material.R.attr.colorSurface, typedValue, true)
         window?.navigationBarColor = typedValue.data
-        neumviews.invalidateMenu()
 
         if (Anilist.token != null) {
             binding.settingsLogin.setText(R.string.logout)
