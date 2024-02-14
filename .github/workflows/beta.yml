@@ -124,16 +124,16 @@ jobs:
         draft: false
         prerelease: true
 
-    - name: Upload Release Asset
-      id: upload-release-asset 
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: "app/build/outputs/apk/fdroid/alpha/app-fdroid-alpha.apk"
-        asset_name: sussy-${{ env.VERSION }}.apk
-        asset_content_type: application/vnd.android.package-archive
+    ##- name: Upload Release Asset
+      ##id: upload-release-asset 
+     ## uses: actions/upload-release-asset@v1
+      ##env:
+        ##GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ##with:
+        ##upload_url: ${{ steps.create_release.outputs.upload_url }}
+        ##asset_path: "app/build/outputs/apk/fdroid/alpha/app-fdroid-alpha.apk"
+        ##asset_name: sussy-${{ env.VERSION }}.apk
+        ##asset_content_type: application/vnd.android.package-archive
 
     - name: Delete Old Pre-Releases
       id: delete-pre-releases

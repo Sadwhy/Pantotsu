@@ -154,7 +154,7 @@ class OfflineMangaFragment : Fragment(), OfflineMangaSearchListener {
         gridView.adapter = adapter
         gridView.scheduleLayoutAnimation()
         total.text =
-            if (gridView.count > 0) "Manga and Novels (${gridView.count})" else "Empty List"
+            if (gridView.count > 0) "Manga & Novels (${gridView.count})" else "Empty List"
         gridView.setOnItemClickListener { _, _, position, _ ->
             // Get the OfflineMangaModel that was clicked
             val item = adapter.getItem(position) as OfflineMangaModel
@@ -194,7 +194,7 @@ class OfflineMangaFragment : Fragment(), OfflineMangaSearchListener {
                 getDownloads()
                 adapter.setItems(downloads)
                 total.text =
-                    if (gridView.count > 0) "Manga and Novels (${gridView.count})" else "Empty List"
+                    if (gridView.count > 0) "Manga & Novels (${gridView.count})" else "Empty List"
             }
             builder.setNegativeButton("No") { _, _ ->
                 // Do nothing
