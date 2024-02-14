@@ -102,7 +102,7 @@
             		android:clickable="true"
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
-            		android:text="@string/import_settings"
+            		android:text="@string/import_settings1"
             		android:textSize="5sp"
             		android:textColor="?attr/colorOnPrimary"
             		android:fontFamily="@font/poppins_bold"/>
