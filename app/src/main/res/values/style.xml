@@ -81,7 +81,7 @@
    
     <style name="neumorph_light">
         <item name="neumorph_cornerFamily">rounded</item>
-        <item name="neumorph_shadowColorLight">?attr/android:colorOnBackground</item>
+        <item name="neumorph_shadowColorLight">?attr/colorOnSurfaceVariant</item>
         <item name="neumorph_shadowColorDark">?attr/colorOnSurface</item>
         <item name="neumorph_shadowElevation">3dp</item>
     </style>
