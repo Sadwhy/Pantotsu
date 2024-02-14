@@ -152,7 +152,7 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
                 ?.putBoolean("offlineMode", true)?.apply()
                     binding.downloadview1.visibility = View.GONE
                     binding.downloadview2.visibility = View.VISIBLE
-            Timer().schedule(1000){
+            Timer().schedule(300){
             offline()
               }
         }
@@ -161,7 +161,7 @@ class SettingsDialogFragment : BottomSheetDialogFragment() {
                 ?.putBoolean("offlineMode", false)?.apply()
                     binding.downloadview2.visibility = View.GONE
                     binding.downloadview1.visibility = View.VISIBLE
-            Timer().schedule(1000){
+            Timer().schedule(300){
             offline()
               }
         }
