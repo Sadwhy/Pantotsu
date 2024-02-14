@@ -59,15 +59,6 @@ class AnimeWatchAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val binding = holder.binding
         _binding = binding
-        //Comments
-        binding.animeComments.visibility = View.VISIBLE
-        binding.animeComments.setOnClickListener {
-            startActivity(
-                fragment.requireContext(),
-                Intent(fragment.requireContext(), CommentsFragment::class.java),
-                null
-            )
-        }
 
         binding.faqbutton.setOnClickListener {
             startActivity(
