@@ -100,7 +100,7 @@ jobs:
           commit_messages="${commit_messages:0:$max_length}... (truncated)"
         fi
         contentbody=$( jq -nc --arg msg "Alpha-Build: <@714249925248024617> **$VERSION**:" --arg commits "$commit_messages" '{"content": ($msg + "\n" + $commits)}' )
-        curl -F "payload_json=${contentbody}" -F "dantotsu_debug=@app/build/outputs/apk/google/alpha/app-google-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
+        curl -F "payload_json=${contentbody}" -F "dantotsu_debug=@app/build/outputs/apk/fdroid/alpha/app-fdroid-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
 
       env:
         COMMIT_LOG: ${{ env.COMMIT_LOG }}
