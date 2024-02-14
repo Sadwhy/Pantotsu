@@ -79,11 +79,6 @@
         <item name="neumorph_shadowElevation">3dp</item>
     </style>
 
-    <style name="elevated_butt">
-      <item name="pitColor">?attr/colorSurface</item>
-      <item name="neuCornerRadius">20dp</item>
-    </style>
-
     <style name="BottomNavBar" parent="">
         <!-- set background color  to transparent -->
         <item name="android:background">@android:color/transparent</item>
