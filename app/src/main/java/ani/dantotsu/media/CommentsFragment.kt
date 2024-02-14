@@ -11,17 +11,17 @@ import ani.dantotsu.setAnimation
 import io.noties.markwon.Markwon
 import io.noties.markwon.SoftBreakAddsNewLinePlugin
 
-class FAQAdapter(
+class ComAdapter(
     private val questions: List<Triple<Int, String, String>>,
     private val manager: FragmentManager
 ) :
-    RecyclerView.Adapter<FAQAdapter.FAQViewHolder>() {
+    RecyclerView.Adapter<ComAdapter.ComViewHolder>() {
 
-    inner class FAQViewHolder(val binding: ItemQuestionBinding) :
+    inner class ComViewHolder(val binding: ItemQuestionBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FAQViewHolder {
-        return FAQViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComViewHolder {
+        return ComViewHolder(
             ItemQuestionBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -30,7 +30,7 @@ class FAQAdapter(
         )
     }
 
-    override fun onBindViewHolder(holder: FAQViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ComViewHolder, position: Int) {
         val b = holder.binding.root
         setAnimation(b.context, b)
         val faq = questions[position]
