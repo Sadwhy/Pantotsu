@@ -44,6 +44,6 @@
         android:layout_gravity="center_vertical"
         app:drawableStartCompat="@drawable/ic_round_delete_24"
         app:drawableTint="?attr/colorOnBackground"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
 </LinearLayout>
