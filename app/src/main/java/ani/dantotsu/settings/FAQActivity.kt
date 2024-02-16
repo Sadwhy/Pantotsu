@@ -93,7 +93,8 @@ class FAQActivity : AppCompatActivity() {
             Triple(
                 R.drawable.ic_round_video_settings_24,
                 currContext()?.getString(R.string.question_15) ?: "",
-                currContext()?.getString(R.string.answer_15) ?: ""
+                currContext()?.getString(R.string.answer_15) ?: "",
+                binding.faqUninstall.visibility = View.VISIBLE
             )
         )
     }
