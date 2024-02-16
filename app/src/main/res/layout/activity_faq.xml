@@ -36,14 +36,5 @@
         tools:itemCount="10"
         tools:listitem="@layout/item_question"
         tools:orientation="vertical" />
-        
-     <ImageView
-        android:id="@+id/faqUninstall"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
-        app:drawableStartCompat="@drawable/ic_round_delete_24"
-        app:drawableTint="?attr/colorOnBackground"
-        android:visibility="visible"/>
 
 </LinearLayout>
