@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - dev
+      - string-1
     paths-ignore:
       - '**/README.md'
 
