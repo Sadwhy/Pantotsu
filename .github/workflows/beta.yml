@@ -56,6 +56,9 @@ jobs:
     - name: Save Current SHA for Next Run
       run: echo ${{ github.sha }} > last_sha.txt
 
+    - name: Save Commit log
+      run: echo $commit_messages > commit_log.txt
+
     - name: Set variables
       run: |
         VER=$(grep -E -o "versionName \".*\"" app/build.gradle | sed -e 's/versionName //g' | tr -d '"')
@@ -119,6 +122,11 @@ jobs:
         name: last-sha
         path: last_sha.txt
 
+    - name: Upload commit log as Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: commit-log
+        path: commit_log.txt
 
     - name: Delete Old Pre-Releases
       id: delete-pre-releases
