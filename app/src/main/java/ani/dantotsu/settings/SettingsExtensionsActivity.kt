@@ -240,6 +240,35 @@ class SettingsExtensionsActivity: AppCompatActivity() {
                 alertDialog.show()
                 alertDialog.window?.setDimAmount(0.8f)
             }
+            
+            val exDns = listOf(
+                "None",
+                "Cloudflare",
+                "Google",
+                "AdGuard",
+                "Quad9",
+                "AliDNS",
+                "DNSPod",
+                "360",
+                "Quad101",
+                "Mullvad",
+                "Controld",
+                "Njalla",
+                "Shecan",
+                "Libre"
+            )
+            settingsExtensionDns.setText(exDns[PrefManager.getVal(PrefName.DohProvider)])
+            settingsExtensionDns.setAdapter(
+                ArrayAdapter(
+                    context, R.layout.item_dropdown, exDns
+                )
+            )
+            settingsExtensionDns.setOnItemClickListener { _, _, i, _ ->
+                PrefManager.setVal(PrefName.DohProvider, i)
+                settingsExtensionDns.clearFocus()
+                restartApp(binding.root)
+            }
+         
         }
     }
 

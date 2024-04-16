@@ -82,7 +82,7 @@ jobs:
       run: chmod +x ./gradlew
   
     - name: Build with Gradle
-      run: ./gradlew assembleGoogleAlpha -Pandroid.injected.signing.store.file=$GITHUB_WORKSPACE/key.keystore -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
+      run: ./gradlew assembleFdroidAlpha -Pandroid.injected.signing.store.file=$GITHUB_WORKSPACE/key.keystore -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4.3.1
@@ -91,14 +91,13 @@ jobs:
           retention-days: 5
           compression-level: 9
           path: | 
-            app/build/outputs/apk/google/alpha/app-google-universal-alpha.apk
-            app/build/outputs/apk/google/alpha/app-google-armeabi-v7a-alpha.apk
-            app/build/outputs/apk/google/alpha/app-google-arm64-v8a-alpha.apk
-            app/build/outputs/apk/google/alpha/app-google-x86-alpha.apk
-            app/build/outputs/apk/google/alpha/app-google-x86_64-alpha.apk
+            app/build/outputs/apk/fdroid/alpha/app-fdroid-universal-alpha.apk
+            app/build/outputs/apk/fdroid/alpha/app-fdroid-armeabi-v7a-alpha.apk
+            app/build/outputs/apk/fdroid/alpha/app-fdroid-arm64-v8a-alpha.apk
+            app/build/outputs/apk/fdroid/alpha/app-fdroid-x86-alpha.apk
+            app/build/outputs/apk/fdroid/alpha/app-fdroid-x86_64-alpha.apk
             
     - name: Upload APK to Discord and Telegram
-      if: ${{ github.repository == 'rebelonion/Dantotsu' }}
       shell: bash
       run: |
         #Discord
@@ -109,11 +108,11 @@ jobs:
           commit_messages="${commit_messages:0:$max_length}... (truncated)"
         fi
         contentbody=$( jq -nc --arg msg "Alpha-Build: <@&1225347048321191996> **$VERSION**:" --arg commits "$commit_messages" '{"content": ($msg + "\n" + $commits)}' )
-        curl -F "payload_json=${contentbody}" -F "dantotsu_debug=@app/build/outputs/apk/google/alpha/app-google-universal-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
-        curl -F "dantotsu_debug=@app/build/outputs/apk/google/alpha/app-google-armeabi-v7a-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
-        curl -F "dantotsu_debug=@app/build/outputs/apk/google/alpha/app-google-arm64-v8a-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
-        curl -F "dantotsu_debug=@app/build/outputs/apk/google/alpha/app-google-x86-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
-        curl -F "dantotsu_debug=@app/build/outputs/apk/google/alpha/app-google-x86_64-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
+        curl -F "payload_json=${contentbody}" -F "dantotsu_debug=@app/build/outputs/apk/fdroid/alpha/app-fdroid-universal-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
+        curl -F "dantotsu_debug=@app/build/outputs/apk/fdroid/alpha/app-fdroid-armeabi-v7a-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
+        curl -F "dantotsu_debug=@app/build/outputs/apk/fdroid/alpha/app-fdroid-arm64-v8a-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
+        curl -F "dantotsu_debug=@app/build/outputs/apk/fdroid/alpha/app-fdroid-x86-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
+        curl -F "dantotsu_debug=@app/build/outputs/apk/fdroid/alpha/app-fdroid-x86_64-alpha.apk" ${{ secrets.DISCORD_WEBHOOK }}
      
         #Telegram
         curl -X POST \
@@ -121,19 +120,19 @@ jobs:
           -d text="Alpha-Build: ${VERSION}: ${commit_messages}" \
           https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage
         curl -F "chat_id=${{ secrets.TELEGRAM_CHANNEL_ID }}" \
-          -F "document=@app/build/outputs/apk/google/alpha/app-google-armeabi-v7a-alpha.apk" \
+          -F "document=@app/build/outputs/apk/fdroid/alpha/app-fdroid-armeabi-v7a-alpha.apk" \
           https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendDocument
         curl -F "chat_id=${{ secrets.TELEGRAM_CHANNEL_ID }}" \
-          -F "document=@app/build/outputs/apk/google/alpha/app-google-arm64-v8a-alpha.apk" \
+          -F "document=@app/build/outputs/apk/fdroid/alpha/app-fdroid-arm64-v8a-alpha.apk" \
           https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendDocument
         curl -F "chat_id=${{ secrets.TELEGRAM_CHANNEL_ID }}" \
-          -F "document=@app/build/outputs/apk/google/alpha/app-google-x86-alpha.apk" \
+          -F "document=@app/build/outputs/apk/fdroid/alpha/app-fdroid-x86-alpha.apk" \
           https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendDocument
         curl -F "chat_id=${{ secrets.TELEGRAM_CHANNEL_ID }}" \
-          -F "document=@app/build/outputs/apk/google/alpha/app-google-x86_64-alpha.apk" \
+          -F "document=@app/build/outputs/apk/fdroid/alpha/app-fdroid-x86_64-alpha.apk" \
           https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendDocument
         curl -F "chat_id=${{ secrets.TELEGRAM_CHANNEL_ID }}" \
-          -F "document=@app/build/outputs/apk/google/alpha/app-google-universal-alpha.apk" \
+          -F "document=@app/build/outputs/apk/fdroid/alpha/app-fdroid-universal-alpha.apk" \
          https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendDocument
 
       env:
