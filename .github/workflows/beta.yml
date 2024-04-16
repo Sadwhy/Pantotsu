@@ -3,7 +3,7 @@ name: Build APK and Notify Discord
 on:
   push:
     branches:
-      - dev
+      - test
     paths-ignore:
       - '**/README.md'
 
