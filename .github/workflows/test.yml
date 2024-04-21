@@ -15,11 +15,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set variables
+      - name: Fetch version name
         run: |
-          VER=$(grep -E -o "versionName \".*\"" app/build.gradle | sed -e 's/versionName //g' | tr -d '"')
-          SHA=${{ github.sha }}
-          VERSION="$VER+${SHA:0:7}"
+          VERSION=$(grep -E -o "versionName \".*\"" app/build.gradle | sed -e 's/versionName //g' | tr -d '"')
           echo "Version $VERSION"
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
