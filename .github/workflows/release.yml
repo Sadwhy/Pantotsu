@@ -47,10 +47,10 @@ jobs:
 
       - name: Move APK and calculate checksum
         run: |
-          mv app/build/outputs/apk/google/release/app-google-alpha.apk release-google-${{ env.VERSION }}.apk
+          mv app/build/outputs/apk/google/release/app-google-release.apk release-google-${{ env.VERSION }}.apk
           echo "GOOGLE=$(sha256sum release-google-${{ env.VERSION }}.apk | cut -d' ' -f1)" >> $GITHUB_ENV
         
-          mv app/build/outputs/apk/fdroid/google/app-google-alpha.apk release-fdroid-${{ env.VERSION }}.apk
+          mv app/build/outputs/apk/fdroid/release/app-fdroid-release.apk release-fdroid-${{ env.VERSION }}.apk
           echo "FDROID=$(sha256sum release-fdroid-${{ env.VERSION }}.apk | cut -d' ' -f1)" >> $GITHUB_ENV
 
       - name: Upload Build Artifacts (Google)
