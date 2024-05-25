@@ -64,7 +64,6 @@ jobs:
           path: "release-fdroid-${{ env.VERSION }}.apk"
 
       - name: Create Release
-        if: github.repository == 'rebelonion/Dantotsu'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.VERSION }}
