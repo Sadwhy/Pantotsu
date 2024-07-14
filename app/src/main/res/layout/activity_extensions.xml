@@ -56,7 +56,7 @@
                 android:layout_height="48dp"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/sort_by"
-                app:srcCompat="@drawable/ic_github"
+                app:srcCompat="@drawable/ic_add"
                 app:tint="?attr/colorOnBackground" />
 
             <ImageButton

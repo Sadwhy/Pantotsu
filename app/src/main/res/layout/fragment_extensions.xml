@@ -7,7 +7,7 @@
     android:paddingEnd="16dp">
   
  <LinearLayout
-	android:id="@+id/linearlayout"
+	android:id="@+id/asktoaddrepo"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
@@ -18,7 +18,10 @@
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="No extensions found 😢" />
+		android:text="No extensions found 😢"
+		android:fontFamily="@font/poppins_bold"
+		android:textColor="@color/bg_white"
+		android:textSize="16sp"/>
 
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -30,18 +33,25 @@
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="Tap on " />
+			android:text="Tap on "
+			android:fontFamily="@font/poppins_bold"
+			android:textColor="@color/bg_white"
+			android:textSize="16sp"/>
 
 		<ImageView
-			android:layout_width="32dp"
-			android:layout_height="32dp"
-			android:src="@drawable/add"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			app:srcCompat="@drawable/ic_add"
+      app:tint="?attr/colorOnBackground"
 			/>
 
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text=" to add a repository " />
+			android:text=" to add a repository "
+			android:fontFamily="@font/poppins_bold"
+			android:textColor="@color/bg_white"
+			android:textSize="16sp"/>
 
 	</LinearLayout>
 
