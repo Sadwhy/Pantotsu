@@ -230,7 +230,8 @@
             android:exported="true"
             android:supportsRtl="true"
             android:label="@string/manga"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"
+            tools:replace="android:supportsRtl" />
         <activity android:name=".media.GenreActivity" />
         <activity
             android:name=".media.MediaListViewActivity"
