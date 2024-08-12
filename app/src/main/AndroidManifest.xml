@@ -228,6 +228,7 @@
             android:name=".media.manga.mangareader.MangaReaderActivity"
             android:excludeFromRecents="true"
             android:exported="true"
+            android:layoutDirection="rtl"
             android:label="@string/manga"
             android:launchMode="singleTask" />
         <activity android:name=".media.GenreActivity" />

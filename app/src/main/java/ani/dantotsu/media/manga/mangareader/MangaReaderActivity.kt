@@ -741,7 +741,7 @@ class MangaReaderActivity : AppCompatActivity() {
                 visibility = View.VISIBLE
                 adapter = imageAdapter
                 layoutDirection =
-                    if (directionRLBT) View.LAYOUT_DIRECTION_LTR else View.LAYOUT_DIRECTION_RTL
+                    if (directionRLBT) View.LAYOUT_DIRECTION_RTL else View.LAYOUT_DIRECTION_LTR
                 orientation =
                     if (defaultSettings.direction == LEFT_TO_RIGHT || defaultSettings.direction == RIGHT_TO_LEFT)
                         ViewPager2.ORIENTATION_HORIZONTAL
@@ -935,9 +935,9 @@ class MangaReaderActivity : AppCompatActivity() {
             }
             binding.mangaReaderSlider.layoutDirection =
                 if (directionRLBT)
-                    View.LAYOUT_DIRECTION_LTR
-                else
                     View.LAYOUT_DIRECTION_RTL
+                else
+                    View.LAYOUT_DIRECTION_LTR
             shouldShow?.apply { isContVisible = !this }
             if (isContVisible) {
                 isContVisible = false
