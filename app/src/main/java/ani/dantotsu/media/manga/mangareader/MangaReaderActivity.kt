@@ -935,9 +935,9 @@ class MangaReaderActivity : AppCompatActivity() {
             }
             binding.mangaReaderSlider.layoutDirection =
                 if (directionRLBT)
-                    View.LAYOUT_DIRECTION_RTL
-                else
                     View.LAYOUT_DIRECTION_LTR
+                else
+                    View.LAYOUT_DIRECTION_RTL
             shouldShow?.apply { isContVisible = !this }
             if (isContVisible) {
                 isContVisible = false
