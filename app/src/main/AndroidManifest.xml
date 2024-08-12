@@ -69,7 +69,7 @@
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="${icon_placeholder_round}"
-        android:supportsRtl="true"
+        android:supportsRtl="false"
         android:theme="@style/Theme.Dantotsu"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup"
@@ -228,7 +228,7 @@
             android:name=".media.manga.mangareader.MangaReaderActivity"
             android:excludeFromRecents="true"
             android:exported="true"
-            android:layoutDirection="rtl"
+            android:supportsRtl="true"
             android:label="@string/manga"
             android:launchMode="singleTask" />
         <activity android:name=".media.GenreActivity" />
