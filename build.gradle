@@ -26,7 +26,6 @@ tasks.register('clean', Delete) {
     delete getLayout().getBuildDirectory()
 }
 
-
 tasks.withType(KotlinJvmCompile).configureEach {
     compilerOptions {
         freeCompilerArgs.add("-opt-in=kotlin.RequiresOptIn")
